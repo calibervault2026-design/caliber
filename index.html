@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caliber — A Shared Society for the Chosen</title>
     <style>
-        /* Skudsikkert, indbygget luksusdesign (Ren CSS) */
+        /* Skudsikker og fuldstændig specifik Caliber CSS-arkitektur */
         html {
             scroll-behavior: smooth;
         }
@@ -18,221 +18,159 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-        section {
-            width: 100%;
-            max-width: 800px;
-            box-sizing: border-box;
-            padding: 100px 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-center: center;
             min-height: 100vh;
-            justify-content: center;
         }
-        .text-center { text-align: center; }
         
-        /* Top sub-bar */
-        .sub-bar {
-            border: 1px solid #C5A059;
+        /* TOP-BAR: Guldlinjer der løber igennem hele skærmen */
+        .top-line-container {
+            width: 100%;
+            border-top: 1px solid #C5A059;
+            border-bottom: 1px solid #C5A059;
+            padding: 14px 0;
+            margin-top: 40px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        .top-line-text {
             color: #C5A059;
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            padding: 10px 24px;
-            border-radius: 50px;
-            margin-bottom: 50px;
-            opacity: 0.9;
             font-weight: 500;
+            margin: 0;
+        }
+
+        /* Hero Layout */
+        section {
+            width: 100%;
+            max-width: 800px;
+            box-sizing: border-box;
+            padding: 0 24px 80px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
         
+        /* Massivt og dominerende logo */
         h1 {
-            font-size: 64px;
+            font-size: 68px;
             text-transform: uppercase;
-            letter-spacing: 0.25em;
-            margin: 0 0 16px 0;
-            font-weight: 800;
+            letter-spacing: 0.22em;
+            margin: 0 0 12px 0;
+            font-weight: 900;
+            color: #ffffff;
         }
         
         .tagline {
             color: #C5A059;
-            font-size: 14px;
+            font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
             font-weight: 500;
         }
         
         .main-p {
             color: #95A5A6;
-            font-size: 18px;
-            line-height: 1.7;
-            max-width: 650px;
-            margin: 0 0 50px 0;
+            font-size: 17px;
+            line-height: 1.75;
+            max-width: 660px;
+            margin: 0 0 55px 0;
             font-weight: 300;
         }
         
-        /* Progress Bar Kasse */
-        .counter-box {
+        /* PROGRESS BAR: Guld og hvid asymmetri */
+        .counter-container {
             width: 100%;
             max-width: 450px;
-            background-color: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 24px;
-            border-radius: 16px;
-            margin-bottom: 50px;
+            margin-bottom: 55px;
             box-sizing: border-box;
         }
         .counter-labels {
             display: flex;
             justify-content: space-between;
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #95A5A6;
-            margin-bottom: 12px;
+            color: rgba(255, 255, 255, 0.6); /* Hvid lille skrift i enderne */
+            margin-bottom: 10px;
         }
-        .counter-gold { color: #C5A059; font-weight: bold; letter-spacing: 0.05em; }
+        .current-stat-gold {
+            color: #C5A059;
+            font-weight: bold;
+        }
         .bar-bg {
             width: 100%;
             background-color: rgba(255, 255, 255, 0.1);
-            height: 8px;
-            border-radius: 10px;
+            height: 6px;
+            border-radius: 2px;
             overflow: hidden;
         }
         .bar-fill {
-            background-color: #C5A059;
+            background-color: #C5A059; /* Guldfarvet bjælke */
             height: 100%;
             width: 9.5%;
-            border-radius: 10px;
-        }
-        .counter-sub {
-            font-size: 11px;
-            color: rgba(149, 165, 166, 0.5);
-            font-style: italic;
-            margin: 12px 0 0 0;
-            line-height: 1.5;
+            border-radius: 2px;
         }
         
-        /* Knapper */
+        /* KNAPPER: Rektangulære luksus-konturer og faste farver */
         .btn-container {
             display: flex;
             gap: 16px;
             width: 100%;
-            max-width: 450px;
+            max-width: 480px;
             justify-content: center;
         }
         .btn {
-            flex: 1;
-            padding: 16px 20px;
-            border-radius: 50px;
-            font-size: 12px;
+            width: 230px;
+            padding: 16px 0;
+            border-radius: 4px; /* Rektangulær form med let afrundede hjørner */
+            font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.12em;
             text-decoration: none;
-            transition: all 0.3s ease;
             box-sizing: border-box;
             cursor: pointer;
+            text-align: center;
+            display: inline-block;
         }
+        /* Tilmeldeknappen: Massiv guld */
         .btn-primary {
-            border: 2px solid #C5A059;
-            color: #C5A059;
-            background: transparent;
-        }
-        .btn-primary:hover {
             background-color: #C5A059;
+            border: 1px solid #C5A059;
             color: #0B0C10;
         }
+        /* Purpose-knappen: Helt statisk sort med tynd guldkant og guldskrift */
         .btn-secondary {
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            color: #ffffff;
-            background: transparent;
-        }
-        .btn-secondary:hover {
-            border-color: #C5A059;
+            background-color: #0B0C10;
+            border: 1px solid #C5A059;
             color: #C5A059;
         }
         
-        /* Purpose Sektion */
+        /* Midlertidigt skjult under-sektion indtil forsiden er godkendt */
         #philosophy {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            background-color: rgba(0, 0, 0, 0.2);
-            max-width: 100%;
+            display: none;
         }
-        .inner-philosophy {
-            max-width: 700px;
-            width: 100%;
-        }
-        .p-heading {
-            color: #C5A059;
-            font-size: 12px;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-bottom: 60px;
-        }
-        .manifest-content {
-            color: #95A5A6;
-            font-size: 17px;
-            line-height: 1.8;
-            font-weight: 300;
-        }
-        .manifest-content p { margin-bottom: 30px; }
-        .quote-box {
-            border-left: 2px solid #C5A059;
-            padding-left: 24px;
-            margin: 45px 0;
-            color: #ffffff;
-            font-style: italic;
-            background-color: rgba(255, 255, 255, 0.01);
-            padding-top: 12px;
-            padding-bottom: 12px;
-        }
-        .top-question {
-            color: #ffffff;
-            font-weight: 500;
-            font-size: 19px;
-            margin-bottom: 40px;
-        }
-        .top-question span {
-            color: #C5A059;
-            font-weight: 300;
-            font-style: italic;
-            font-size: 17px;
-            display: block;
-            margin-top: 10px;
-        }
-        .back-top {
-            font-size: 11px;
-            color: rgba(197, 160, 89, 0.4);
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            text-decoration: none;
-            margin-top: 50px;
-            display: inline-block;
-        }
-        .back-top:hover { color: #C5A059; }
 
         /* Mobil-optimering */
         @media (max-width: 600px) {
-            h1 { font-size: 42px; }
-            .btn-container { flex-direction: column; gap: 12px; }
-            .btn { width: 100%; }
+            h1 { font-size: 40px; letter-spacing: 0.15em; }
+            .btn-container { flex-direction: column; gap: 12px; align-items: center; }
+            .btn { width: 100%; max-width: 280px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HERO SEKTION -->
-    <section class="text-center">
-        
-        <!-- Top sub-bar -->
-        <div class="sub-bar">
-            A unique platform for a select caliber of like-minded people
-        </div>
+    <!-- TOP-BAR -->
+    <div class="top-line-container">
+        <p class="top-line-text">A unique platform for a select caliber of like-minded people</p>
+    </div>
 
+    <!-- HERO SEKTION -->
+    <section>
+        
         <!-- Hovedlogo -->
         <h1>Caliber</h1>
 
@@ -247,17 +185,15 @@
         </p>
 
         <!-- Dynamic Progress Bar -->
-        <div class="counter-box">
+        <div class="counter-container">
             <div class="counter-labels">
-                <span>Current Applications</span>
-                <span class="counter-gold">1,420 / 15,000</span>
+                <span>0</span>
+                <span class="current-stat-gold">Current Applications: 1,420</span>
+                <span>15,000</span>
             </div>
             <div class="bar-bg">
                 <div class="bar-fill"></div>
             </div>
-            <p class="counter-sub">
-                We will initiate our closed testing phase in Europe as soon as we reach 15,000 verified applicants.
-            </p>
         </div>
 
         <!-- Knapper -->
@@ -268,35 +204,5 @@
 
     </section>
 
-    <!-- PURPOSE & MINDSET SEKTION -->
-    <section id="philosophy">
-        <div class="inner-philosophy">
-            
-            <div class="p-heading text-center">
-                THE CALIBER PURPOSE AND MINDSET
-            </div>
-
-            <div class="manifest-content">
-                
-                <div class="top-question text-center">
-                    Is it still possible to maintain traditional values in our current modern society?
-                    <span>We believe it is. But it requires a sanctuary.</span>
-                </div>
-
-                <p>
-                    The cultural noise outside has broken the pathway to genuine family and legacy. Mainstream dating apps are intentionally engineered to keep you trapped in an endless loop of searching for profit, without ever helping you achieve your desired result. They populate their networks with fake or abandoned zombie profiles to manipulate their statistics.
-                </p>
-
-                <div class="quote-box">
-                    Caliber is not an app. It is a digital market correction. We are the future – born out of frustration with the current lack of quality.
-                </div>
-
-                <p>
-                    Our purpose is to bring like-minded, quality singles together in a borderless community engineered for creating long-lasting, complementary relationships. When we say like-minded, we are talking about those who recognize that political correctness, wokeness, and radical relationship ideologies have absolutely nothing to do in a healthy relationship.
-                </p>
-
-                <p>
-                    Here, the focus is on a more traditional mindset, to the absolute maximum extent our modern world will allow. Masculine, capable men and feminine, soft women are exactly what you should expect to find within Caliber.
-                </p>
-
-                <p>
+</body>
+</html>
