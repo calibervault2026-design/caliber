@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caliber</title>
-    <!-- SKUDSIKKER GOOGLE FONTS INTEGRATION -->
+    <!-- BRO TIL DEN RIGTIGE GEOMETRISKE DM SANS SKRIFTTYPE -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
@@ -13,14 +13,10 @@
         html {
             scroll-behavior: smooth;
         }
-        /* TVINGER DM SANS PÅ ABSOLUT ALT */
-        * {
-            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
-            box-sizing: border-box;
-        }
         body {
             background-color: #0B0C10;
             color: #E8EDF5;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -53,6 +49,7 @@
         section {
             width: 100%;
             max-width: 850px;
+            box-sizing: border-box;
             padding: 0 24px 100px 24px;
             display: flex;
             flex-direction: column;
@@ -66,13 +63,13 @@
             text-transform: uppercase;
             letter-spacing: 0.18em;
             margin: 0 0 16px 0;
-            font-weight: 900 !important;
+            font-weight: 900;
             color: #ffffff;
         }
         
         /* Hvid undertitel under logoet */
         .tagline {
-            color: #ffffff !important;
+            color: #ffffff;
             font-size: 16px;
             margin-bottom: 50px;
             font-weight: 500;
@@ -94,6 +91,7 @@
             width: 100%;
             max-width: 440px;
             margin-bottom: 60px;
+            box-sizing: border-box;
         }
         .counter-labels {
             display: flex;
@@ -138,6 +136,7 @@
             text-transform: uppercase;
             letter-spacing: 0.08em;
             text-decoration: none;
+            box-sizing: border-box;
             cursor: pointer;
             text-align: center;
             display: inline-block;
@@ -161,14 +160,16 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            box-sizing: border-box;
         }
         .inner-philosophy {
             max-width: 700px;
             width: 100%;
             padding: 120px 24px;
+            box-sizing: border-box;
         }
         .p-heading {
-            color: #C5A059 !important;
+            color: #C5A059;
             font-size: 13px;
             letter-spacing: 0.2em;
             text-transform: uppercase;
@@ -296,5 +297,3 @@
                 <p>
                     Our purpose is to bring like-minded, quality singles together in a borderless community engineered for creating long-lasting, complementary relationships. When we say like-minded, we are talking about those who recognize that political correctness, wokeness, and radical relationship ideologies have absolutely nothing to do in a healthy relationship.
                 </p>
-                
-                <p>
