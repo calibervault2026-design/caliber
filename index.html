@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caliber</title>
-    <!-- BRO TIL DEN RIGTIGE GEOMETRISKE DM SANS SKRIFTTYPE -->
+    <!-- BRO TIL DEN GEOMETRISKE LUXUS-SKRIFTTYPE -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
@@ -13,11 +13,14 @@
         html {
             scroll-behavior: smooth;
         }
+        /* TVINGER DEN GEOMETRISKE SKRIFTTYPE PÅ ABSOLUT ALT */
+        * {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+            box-sizing: border-box;
+        }
         body {
             background-color: #0B0C10;
             color: #E8EDF5;
-            /* Aktiverer den geometriske luksus-skrifttype på hele siden */
-            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -50,7 +53,6 @@
         section {
             width: 100%;
             max-width: 850px;
-            box-sizing: border-box;
             padding: 0 24px 100px 24px;
             display: flex;
             flex-direction: column;
@@ -58,13 +60,13 @@
             text-align: center;
         }
         
-        /* Det massive, tunge CALIBER logo med den helt rigtige runde og faste form */
+        /* Det massive, tunge CALIBER logo med den helt rigtige tykkelse */
         h1 {
             font-size: 72px;
             text-transform: uppercase;
             letter-spacing: 0.18em;
             margin: 0 0 16px 0;
-            font-weight: 900; /* Ekstremt tung og massiv vægt */
+            font-weight: 900;
             color: #ffffff;
         }
         
@@ -87,12 +89,11 @@
             font-weight: 400;
         }
         
-        /* PROGRESS BAR */
+        /* PROGRESS BAR: Stabiliseret og fuldt synlig */
         .counter-container {
             width: 100%;
             max-width: 440px;
             margin-bottom: 60px;
-            box-sizing: border-box;
         }
         .counter-labels {
             display: flex;
@@ -106,14 +107,18 @@
         .bar-bg {
             width: 100%;
             background-color: rgba(255, 255, 255, 0.08);
-            height: 5px;
+            height: 6px;
             border-radius: 2px;
+            position: relative;
         }
         .bar-fill {
-            background-color: #C5A059;
+            background-color: #C5A059 !important;
             height: 100%;
             width: 9.5%;
             border-radius: 2px;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
         
         /* KNAPPER */
@@ -133,7 +138,6 @@
             text-transform: uppercase;
             letter-spacing: 0.08em;
             text-decoration: none;
-            box-sizing: border-box;
             cursor: pointer;
             text-align: center;
             display: inline-block;
@@ -149,7 +153,7 @@
             color: #C5A059;
         }
         
-        /* PURPOSE SEKTION */
+        /* PURPOSE SEKTION: Fuldstændig repareret struktur */
         #philosophy {
             width: 100%;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -157,13 +161,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            box-sizing: border-box;
         }
         .inner-philosophy {
             max-width: 700px;
             width: 100%;
             padding: 120px 24px;
-            box-sizing: border-box;
         }
         .p-heading {
             color: #C5A059;
@@ -255,7 +257,7 @@
                 <span>1,420</span>
                 <span>15,000</span>
             </div>
-            <div class="var-bg">
+            <div class="bar-bg">
                 <div class="bar-fill"></div>
             </div>
         </div>
