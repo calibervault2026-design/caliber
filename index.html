@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caliber — A Shared Society for the Chosen</title>
+    <title>Caliber</title>
     <style>
-        /* Skudsikker og fuldstændig specifik Caliber CSS-arkitektur */
         html {
             scroll-behavior: smooth;
         }
@@ -35,7 +34,7 @@
             color: #C5A059;
             font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.15em;
             font-weight: 500;
             margin: 0;
         }
@@ -54,28 +53,27 @@
         
         /* Massivt og dominerende logo */
         h1 {
-            font-size: 68px;
+            font-size: 64px;
             text-transform: uppercase;
-            letter-spacing: 0.22em;
-            margin: 0 0 12px 0;
+            letter-spacing: 0.2em;
+            margin: 0 0 16px 0;
             font-weight: 900;
             color: #ffffff;
         }
         
         .tagline {
             color: #C5A059;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
+            font-size: 15px;
             margin-bottom: 45px;
             font-weight: 500;
+            letter-spacing: 0.02em;
         }
         
         .main-p {
             color: #95A5A6;
-            font-size: 17px;
+            font-size: 15px;
             line-height: 1.75;
-            max-width: 660px;
+            max-width: 680px;
             margin: 0 0 55px 0;
             font-weight: 300;
         }
@@ -91,12 +89,8 @@
             display: flex;
             justify-content: space-between;
             font-size: 11px;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.6); /* Hvid lille skrift i enderne */
+            color: rgba(255, 255, 255, 0.6);
             margin-bottom: 10px;
-        }
-        .current-stat-gold {
-            color: #C5A059;
             font-weight: bold;
         }
         .bar-bg {
@@ -107,13 +101,13 @@
             overflow: hidden;
         }
         .bar-fill {
-            background-color: #C5A059; /* Guldfarvet bjælke */
+            background-color: #C5A059;
             height: 100%;
             width: 9.5%;
             border-radius: 2px;
         }
         
-        /* KNAPPER: Rektangulære luksus-konturer og faste farver */
+        /* KNAPPER: Præcis form og faste farver fra dit billede */
         .btn-container {
             display: flex;
             gap: 16px;
@@ -124,7 +118,7 @@
         .btn {
             width: 230px;
             padding: 16px 0;
-            border-radius: 4px; /* Rektangulær form med let afrundede hjørner */
+            border-radius: 4px;
             font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
@@ -135,27 +129,38 @@
             text-align: center;
             display: inline-block;
         }
-        /* Tilmeldeknappen: Massiv guld */
+        /* Join Caliber: Helt massiv guld med mørk skrift */
         .btn-primary {
             background-color: #C5A059;
             border: 1px solid #C5A059;
             color: #0B0C10;
         }
-        /* Purpose-knappen: Helt statisk sort med tynd guldkant og guldskrift */
+        /* Our Philosophy: Statisk sort med tynd guldkant og guldskrift */
         .btn-secondary {
             background-color: #0B0C10;
             border: 1px solid #C5A059;
             color: #C5A059;
         }
         
-        /* Midlertidigt skjult under-sektion indtil forsiden er godkendt */
+        /* Under-sektion holdes klar til scroll-funktionen */
         #philosophy {
-            display: none;
+            width: 100%;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        .inner-philosophy {
+            max-width: 700px;
+            width: 100%;
+            padding: 100px 24px;
+            box-sizing: border-box;
         }
 
-        /* Mobil-optimering */
         @media (max-width: 600px) {
-            h1 { font-size: 40px; letter-spacing: 0.15em; }
+            h1 { font-size: 38px; letter-spacing: 0.1em; }
             .btn-container { flex-direction: column; gap: 12px; align-items: center; }
             .btn { width: 100%; max-width: 280px; }
         }
@@ -165,30 +170,29 @@
 
     <!-- TOP-BAR -->
     <div class="top-line-container">
-        <p class="top-line-text">A unique platform for a select caliber of like-minded people</p>
+        <p class="top-line-text">Join the European waiting list for the initial chapter of our global community</p>
     </div>
 
     <!-- HERO SEKTION -->
     <section>
         
         <!-- Hovedlogo -->
-        <h1>Caliber</h1>
+        <h1>CALIBER</h1>
 
         <!-- Under-tagline -->
         <div class="tagline">
-            — A new era with the possibility of connecting
+            - A unique platform for a select caliber of like-minded people
         </div>
 
         <!-- Manifest Brødtekst -->
         <p class="main-p">
-            Mainstream dating apps are designed to keep you in an endless loop, without helping you get your desired result. Caliber is something else entirely. No superficial loops. Just pure character, groundbreaking new features and mutual accountability.
+            Mainstream dating apps are designed to keep you in an endless loop, without helping you get your desired result. Caliber is something else entirely - engineered for efficiency and alignment. A new era with the possibility of connecting with genuine like-minded people. We filter out the noise, the scams, the games, and the digital facades through advanced behavioral screening and strict identity verification. No fake or abandoned profiles. No superficial loops. Just pure character, groundbreaking new features and mutual accountability.
         </p>
 
         <!-- Dynamic Progress Bar -->
         <div class="counter-container">
             <div class="counter-labels">
-                <span>0</span>
-                <span class="current-stat-gold">Current Applications: 1,420</span>
+                <span>1,420</span>
                 <span>15,000</span>
             </div>
             <div class="bar-bg">
@@ -198,8 +202,8 @@
 
         <!-- Knapper -->
         <div class="btn-container">
-            <button class="btn btn-primary">[ Apply for Membership ]</button>
-            <a href="#philosophy" class="btn btn-secondary">[ Our Philosophy ]</a>
+            <button class="btn btn-primary">Join Caliber</button>
+            <a href="#philosophy" class="btn btn-secondary">Our Philosophy</a>
         </div>
 
     </section>
