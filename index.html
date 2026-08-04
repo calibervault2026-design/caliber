@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caliber — A Shared Society for the Chosen</title>
-    <!-- Tailwind CSS til luksus styling -->
+    <!-- Klippesolid, klassisk Tailwind CSS som GitHub tillader uden fejl -->
     <script src="https://jsdelivr.net"></script>
     <style>
-        /* Officielle Caliber Brand Farver */
+        /* Officielle Caliber Brand Værdier */
         body {
             background-color: #0B0C10;
         }
@@ -25,54 +25,54 @@
         }
     </style>
 </head>
-<body class="text-white font-sans antialiased selection:bg-[#C5A059] selection:text-[#0B0C10]">
+<body class="text-white font-sans antialiased bg-[#0B0C10] min-h-screen flex flex-col justify-between selection:bg-[#C5A059] selection:text-[#0B0C10]">
 
     <!-- HERO SEKTION -->
-    <section class="min-h-screen flex flex-col justify-center items-center px-6 py-20 max-w-4xl mx-auto text-center">
+    <section class="min-h-screen flex flex-col justify-center items-center px-6 py-24 max-w-4xl mx-auto text-center w-full">
         
         <!-- Top sub-bar / Tagline -->
-        <div class="inline-block border border-caliber-gold text-caliber-gold text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-full mb-12 opacity-90">
+        <div class="inline-block border border-caliber-gold text-caliber-gold text-[10px] md:text-xs tracking-[0.2em] uppercase px-5 py-2.5 rounded-full mb-12 opacity-90 font-medium">
             A unique platform for a select caliber of like-minded people
         </div>
 
         <!-- Hovedlogo -->
-        <h1 class="text-5xl md:text-7xl font-extrabold tracking-[0.25em] uppercase mb-6 text-white">
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-[0.25em] uppercase mb-4 text-white">
             Caliber
         </h1>
 
         <!-- Lille under-tagline -->
-        <div class="text-caliber-gold text-sm md:text-base tracking-[0.15em] uppercase mb-8 font-medium">
+        <div class="text-caliber-gold text-xs md:text-sm tracking-[0.15em] uppercase mb-10 font-medium opacity-90">
             — A new era with the possibility of connecting
         </div>
 
         <!-- Det store manifest / Brødtekst -->
-        <p class="text-caliber-gray text-base md:text-lg max-w-2xl leading-relaxed mb-12 font-light">
+        <p class="text-caliber-gray text-base md:text-lg max-w-2xl leading-relaxed mb-14 font-light">
             Mainstream dating apps are designed to keep you in an endless loop, without helping you get your desired result. Caliber is something else entirely. No superficial loops. Just pure character, groundbreaking new features and mutual accountability.
         </p>
 
         <!-- Dynamic Progress Bar (Tilmeldings-status) -->
-        <div class="w-full max-w-md mb-12 text-left">
-            <div class="flex justify-between items-center text-xs tracking-wider uppercase mb-2 text-caliber-gray">
-                <span>Current Applications</span>
-                <span class="text-caliber-gold font-bold">1,420 / 15,000</span>
+        <div class="w-full max-w-md mb-14 text-left bg-white/[0.02] p-6 border border-white/5 rounded-2xl">
+            <div class="flex justify-between items-center text-xs tracking-wider uppercase mb-3 text-caliber-gray">
+                <span class="font-medium">Current Applications</span>
+                <span class="text-caliber-gold font-bold tracking-widest">1,420 / 15,000</span>
             </div>
             <!-- Selve statusbaren i champagne-guld -->
             <div class="w-full bg-white/10 h-2 rounded-full overflow-hidden">
                 <div class="bg-caliber-gold h-full rounded-full transition-all duration-1000 ease-out" style="width: 9.5%"></div>
             </div>
-            <p class="text-[10px] text-caliber-gray/60 mt-1.5 italic text-center">
+            <p class="text-[10px] text-caliber-gray/50 mt-2.5 italic text-center leading-normal">
                 We will initiate our closed testing phase in Europe as soon as we reach 15,000 verified applicants.
             </p>
         </div>
 
-        <!-- To guld-konturknapper -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-sm">
+        <!-- To store luksus guldknapper -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-md">
             <!-- Venstre knap: Ansøg -->
-            <button class="w-full sm:w-auto px-8 py-3.5 border-2 border-caliber-gold text-caliber-gold rounded-full font-medium tracking-wide uppercase hover:bg-caliber-gold hover:text-[#0B0C10] transition-colors duration-300">
+            <button class="w-full sm:w-1/2 px-6 py-4 border-2 border-caliber-gold text-caliber-gold rounded-full font-semibold text-xs tracking-widest uppercase hover:bg-caliber-gold hover:text-[#0B0C10] transition-all duration-300 cursor-pointer">
                 [ Apply for Membership ]
             </button>
             <!-- Højre knap: Scroll til filosofi -->
-            <a href="#philosophy" class="w-full sm:w-auto px-8 py-3.5 border-2 border-white/20 text-white rounded-full font-medium tracking-wide uppercase hover:border-caliber-gold hover:text-caliber-gold text-center transition-colors duration-300">
+            <a href="#philosophy" class="w-full sm:w-1/2 px-6 py-4 border-2 border-white/20 text-white rounded-full font-semibold text-xs tracking-widest uppercase hover:border-caliber-gold hover:text-caliber-gold text-center transition-all duration-300 cursor-pointer">
                 [ Our Philosophy ]
             </a>
         </div>
@@ -80,8 +80,8 @@
     </section>
 
     <!-- PURPOSE & MINDSET SEKTION -->
-    <section id="philosophy" class="min-h-screen flex flex-col justify-center items-center px-6 py-24 bg-black/30 border-t border-white/5">
-        <div class="max-w-3xl mx-auto text-left">
+    <section id="philosophy" class="min-h-screen flex flex-col justify-center items-center px-6 py-28 bg-black/40 border-t border-white/5 w-full">
+        <div class="max-w-2xl mx-auto text-left w-full">
             
             <!-- Overskrift -->
             <h2 class="text-center text-caliber-gold text-xs tracking-[0.25em] uppercase mb-16 font-bold">
@@ -91,16 +91,16 @@
             <!-- Manifest Brødtekst (Dine præcise afsnit) -->
             <div class="space-y-8 text-caliber-gray text-base md:text-lg leading-relaxed font-light">
                 
-                <p class="text-white font-medium text-center mb-8">
+                <p class="text-white font-medium text-center mb-10 text-lg md:text-xl">
                     Is it still possible to maintain traditional values in our current modern society?<br>
-                    <span class="text-caliber-gold font-light italic">We believe it is. But it requires a sanctuary.</span>
+                    <span class="text-caliber-gold font-light italic text-base md:text-lg block mt-2">We believe it is. But it requires a sanctuary.</span>
                 </p>
 
                 <p>
                     The cultural noise outside has broken the pathway to genuine family and legacy. Mainstream dating apps are intentionally engineered to keep you trapped in an endless loop of searching for profit, without ever helping you achieve your desired result. They populate their networks with fake or abandoned zombie profiles to manipulate their statistics.
                 </p>
 
-                <p class="border-l-2 border-caliber-gold pl-6 py-2 my-10 text-white font-normal italic bg-white/[0.02]">
+                <p class="border-l-2 border-caliber-gold pl-6 py-3 my-12 text-white font-normal italic bg-white/[0.01] text-base md:text-lg leading-relaxed">
                     Caliber is not an app. It is a digital market correction. We are the future – born out of frustration with the current lack of quality.
                 </p>
 
@@ -127,8 +127,8 @@
             </div>
 
             <!-- Bundknap for at rulle op igen -->
-            <div class="text-center mt-16">
-                <a href="#" class="text-xs text-caliber-gold/50 tracking-widest uppercase hover:text-caliber-gold transition-colors">
+            <div class="text-center mt-20">
+                <a href="#" class="text-xs text-caliber-gold/40 tracking-widest uppercase hover:text-caliber-gold transition-colors font-medium">
                     ▲ Back to Top
                 </a>
             </div>
