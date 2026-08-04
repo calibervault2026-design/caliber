@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caliber</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        /* SYSTEM PREMIUM SKRIFTTYPE */
+        * {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #0B0C10;
+            color: #E8EDF5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* TOP-BAR: Guldlinjer der skærer igennem skærmen */
+        .top-line-container {
+            width: 100%;
+            border-top: 1px solid #C5A059;
+            border-bottom: 1px solid #C5A059;
+            padding: 16px 0;
+            margin-top: 60px;
+            margin-bottom: 70px;
+            text-align: center;
+        }
+        .top-line-text {
+            color: #C5A059;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        /* Main Hero Layout */
+        section {
+            width: 100%;
+            max-width: 850px;
+            padding: 0 24px 100px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        /* Det massive, tunge CALIBER logo */
+        h1 {
+            font-size: 72px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            margin: 0 0 16px 0;
+            font-weight: 900;
+            color: #ffffff;
+        }
+        
+        /* Hvid undertitel under logoet */
+        .tagline {
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 50px;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+        
+        /* Den store manifest-blok */
+        .main-p {
+            color: #A0AAB5;
+            font-size: 15px;
+            line-height: 1.85;
+            max-width: 680px;
+            margin: 0 0 60px 0;
+            font-weight: 400;
+        }
+        
+        /* PROGRESS BAR */
+        .counter-container {
+            width: 100%;
+            max-width: 440px;
+            margin-bottom: 60px;
+        }
+        .counter-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 12px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+        .bar-bg {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.08);
+            height: 6px;
+            border-radius: 2px;
+            position: relative;
+        }
+        .bar-fill {
+            background-color: #C5A059;
+            height: 100%;
+            width: 9.5%;
+            border-radius: 2px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        /* KNAPPER */
+        .btn-container {
+            display: flex;
+            gap: 16px;
+            width: 100%;
+            max-width: 460px;
+            justify-content: center;
+        }
+        .btn {
+            width: 220px;
+            padding: 16px 0;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+        }
+        .btn-primary {
+            background-color: #C5A059;
+            border: 1px solid #C5A059;
+            color: #0B0C10;
+        }
+        .btn-secondary {
+            background-color: #0B0C10;
+            border: 1px solid #C5A059;
+            color: #C5A059;
+        }
+        
+        /* PURPOSE SEKTION */
+        #philosophy {
+            width: 100%;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        .inner-philosophy {
+            max-width: 700px;
+            width: 100%;
+            padding: 120px 24px;
+            box-sizing: border-box;
+        }
+        .p-heading {
+            color: #C5A059;
+            font-size: 13px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        .manifest-content {
+            color: #A0AAB5;
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: 400;
+            text-align: left;
+        }
+        .manifest-content p { margin-bottom: 30px; }
+        .quote-box {
+            border-left: 2px solid #C5A059;
+            padding-left: 24px;
+            margin: 45px 0;
+            color: #ffffff;
+            font-style: italic;
+            background-color: rgba(255, 255, 255, 0.01);
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        .top-question {
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+            line-height: 1.5;
+        }
+        .top-question span {
+            color: #C5A059;
+            font-weight: 400;
+            font-style: italic;
+            font-size: 16px;
+            display: block;
+            margin-top: 12px;
+        }
+        .back-top {
+            font-size: 11px;
+            color: rgba(197, 160, 89, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            text-decoration: none;
+            margin-top: 60px;
+            display: inline-block;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 44px; letter-spacing: 0.1em; }
+            .btn-container { flex-direction: column; gap: 12px; align-items: center; }
+            .btn { width: 100%; max-width: 280px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP-BAR -->
+    <div class="top-line-container">
+        <p class="top-line-text">Join the European waiting list for the initial chapter of our global community</p>
+    </div>
+
+    <!-- HERO SEKTION -->
+    <section>
+        
+        <!-- Hovedlogo -->
+        <h1>CALIBER</h1>
+
+        <!-- Under-tagline -->
+        <div class="tagline">
+            - A unique platform for a select caliber of like-minded people
+        </div>
+
+        <!-- Manifest Brødtekst -->
+        <p class="main-p">
+            Mainstream dating apps are designed to keep you in an endless loop, without helping you get your desired result. Caliber is something else entirely - engineered for efficiency and alignment. A new era with the possibility of connecting with genuine like-minded people. We filter out the noise, the scams, the games, and the digital facades through advanced behavioral screening and strict identity verification. No fake or abandoned profiles. No superficial loops. Just pure character, groundbreaking new features and mutual accountability.
+        </p>
+
+        <!-- Dynamic Progress Bar -->
+        <div class="counter-container">
+            <div class="counter-labels">
+                <span>1,420</span>
+                <span>15,000</span>
+            </div>
+            <div class="bar-bg">
+                <div class="bar-fill"></div>
+            </div>
+        </div>
+
+        <!-- Knapper -->
+        <div class="btn-container">
+            <button class="btn btn-primary">Join Caliber</button>
+            <a href="#philosophy" class="btn btn-secondary">Our Philosophy</a>
+        </div>
+
+    </section>
+
+    <!-- PURPOSE & MINDSET SEKTION -->
+    <section id="philosophy">
+        <div class="inner-philosophy">
+            
+            <div class="p-heading">
+                THE CALIBER PURPOSE AND MINDSET
+            </div>
+
+            <div class="manifest-content">
+                
+                <div class="top-question">
+                    Is it still possible to maintain traditional values in our current modern society?
+                    <span>We believe it is. But it requires a sanctuary.</span>
+                </div>
+
+                <p>
+                    The cultural noise outside has broken the pathway to genuine family and legacy. Mainstream dating apps are intentionally engineered to keep you trapped in an endless loop of searching for profit, without ever helping you achieve your desired result. They populate their networks with fake or abandoned zombie profiles to manipulate their statistics.
+                </p>
+
+                <div class="quote-box">
+                    Caliber is not an app. It is a digital market correction. We are the future – born out of frustration with the current lack of quality.
+                </div>
+
+                <p>
+                    Our purpose is to bring like-minded, quality singles together in a borderless community engineered for creating long-lasting, complementary relationships. When we say like-minded, we are talking about those who recognize that political correctness, wokeness, and radical relationship ideologies have absolutely nothing to do in a healthy relationship.</p>
+                
+                <p>
+                    Here, the focus is on a more traditional mindset, to the absolute maximum extent our modern world will allow. Masculine, capable men and feminine, soft women are exactly what you should expect to find within Caliber.
+                </p>
+
+                <p>
