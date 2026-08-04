@@ -1,108 +1,295 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caliber — A Shared Society for the Chosen</title>
-    <!-- Klippesolid, klassisk Tailwind CSS som GitHub tillader uden fejl -->
-    <script src="https://jsdelivr.net"></script>
     <style>
-        /* Officielle Caliber Brand Værdier */
+        /* Skudsikkert, indbygget luksusdesign (Ren CSS) */
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             background-color: #0B0C10;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .text-caliber-gold {
+        section {
+            width: 100%;
+            max-width: 800px;
+            box-sizing: border-box;
+            padding: 100px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-center: center;
+            min-height: 100vh;
+            justify-content: center;
+        }
+        .text-center { text-align: center; }
+        
+        /* Top sub-bar */
+        .sub-bar {
+            border: 1px solid #C5A059;
+            color: #C5A059;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            padding: 10px 24px;
+            border-radius: 50px;
+            margin-bottom: 50px;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        h1 {
+            font-size: 64px;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            margin: 0 0 16px 0;
+            font-weight: 800;
+        }
+        
+        .tagline {
+            color: #C5A059;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+        
+        .main-p {
+            color: #95A5A6;
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: 0 0 50px 0;
+            font-weight: 300;
+        }
+        
+        /* Progress Bar Kasse */
+        .counter-box {
+            width: 100%;
+            max-width: 450px;
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 50px;
+            box-sizing: border-box;
+        }
+        .counter-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #95A5A6;
+            margin-bottom: 12px;
+        }
+        .counter-gold { color: #C5A059; font-weight: bold; letter-spacing: 0.05em; }
+        .bar-bg {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            height: 8px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .bar-fill {
+            background-color: #C5A059;
+            height: 100%;
+            width: 9.5%;
+            border-radius: 10px;
+        }
+        .counter-sub {
+            font-size: 11px;
+            color: rgba(149, 165, 166, 0.5);
+            font-style: italic;
+            margin: 12px 0 0 0;
+            line-height: 1.5;
+        }
+        
+        /* Knapper */
+        .btn-container {
+            display: flex;
+            gap: 16px;
+            width: 100%;
+            max-width: 450px;
+            justify-content: center;
+        }
+        .btn {
+            flex: 1;
+            padding: 16px 20px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+        .btn-primary {
+            border: 2px solid #C5A059;
+            color: #C5A059;
+            background: transparent;
+        }
+        .btn-primary:hover {
+            background-color: #C5A059;
+            color: #0B0C10;
+        }
+        .btn-secondary {
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            background: transparent;
+        }
+        .btn-secondary:hover {
+            border-color: #C5A059;
             color: #C5A059;
         }
-        .bg-caliber-gold {
-            background-color: #C5A059;
+        
+        /* Purpose Sektion */
+        #philosophy {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: rgba(0, 0, 0, 0.2);
+            max-width: 100%;
         }
-        .border-caliber-gold {
-            border-color: #C5A059;
+        .inner-philosophy {
+            max-width: 700px;
+            width: 100%;
         }
-        .text-caliber-gray {
+        .p-heading {
+            color: #C5A059;
+            font-size: 12px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 60px;
+        }
+        .manifest-content {
             color: #95A5A6;
+            font-size: 17px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        .manifest-content p { margin-bottom: 30px; }
+        .quote-box {
+            border-left: 2px solid #C5A059;
+            padding-left: 24px;
+            margin: 45px 0;
+            color: #ffffff;
+            font-style: italic;
+            background-color: rgba(255, 255, 255, 0.01);
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        .top-question {
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 19px;
+            margin-bottom: 40px;
+        }
+        .top-question span {
+            color: #C5A059;
+            font-weight: 300;
+            font-style: italic;
+            font-size: 17px;
+            display: block;
+            margin-top: 10px;
+        }
+        .back-top {
+            font-size: 11px;
+            color: rgba(197, 160, 89, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            text-decoration: none;
+            margin-top: 50px;
+            display: inline-block;
+        }
+        .back-top:hover { color: #C5A059; }
+
+        /* Mobil-optimering */
+        @media (max-width: 600px) {
+            h1 { font-size: 42px; }
+            .btn-container { flex-direction: column; gap: 12px; }
+            .btn { width: 100%; }
         }
     </style>
 </head>
-<body class="text-white font-sans antialiased bg-[#0B0C10] min-h-screen flex flex-col justify-between selection:bg-[#C5A059] selection:text-[#0B0C10]">
+<body>
 
     <!-- HERO SEKTION -->
-    <section class="min-h-screen flex flex-col justify-center items-center px-6 py-24 max-w-4xl mx-auto text-center w-full">
+    <section class="text-center">
         
-        <!-- Top sub-bar / Tagline -->
-        <div class="inline-block border border-caliber-gold text-caliber-gold text-[10px] md:text-xs tracking-[0.2em] uppercase px-5 py-2.5 rounded-full mb-12 opacity-90 font-medium">
+        <!-- Top sub-bar -->
+        <div class="sub-bar">
             A unique platform for a select caliber of like-minded people
         </div>
 
         <!-- Hovedlogo -->
-        <h1 class="text-5xl md:text-7xl font-extrabold tracking-[0.25em] uppercase mb-4 text-white">
-            Caliber
-        </h1>
+        <h1>Caliber</h1>
 
-        <!-- Lille under-tagline -->
-        <div class="text-caliber-gold text-xs md:text-sm tracking-[0.15em] uppercase mb-10 font-medium opacity-90">
+        <!-- Under-tagline -->
+        <div class="tagline">
             — A new era with the possibility of connecting
         </div>
 
-        <!-- Det store manifest / Brødtekst -->
-        <p class="text-caliber-gray text-base md:text-lg max-w-2xl leading-relaxed mb-14 font-light">
+        <!-- Manifest Brødtekst -->
+        <p class="main-p">
             Mainstream dating apps are designed to keep you in an endless loop, without helping you get your desired result. Caliber is something else entirely. No superficial loops. Just pure character, groundbreaking new features and mutual accountability.
         </p>
 
-        <!-- Dynamic Progress Bar (Tilmeldings-status) -->
-        <div class="w-full max-w-md mb-14 text-left bg-white/[0.02] p-6 border border-white/5 rounded-2xl">
-            <div class="flex justify-between items-center text-xs tracking-wider uppercase mb-3 text-caliber-gray">
-                <span class="font-medium">Current Applications</span>
-                <span class="text-caliber-gold font-bold tracking-widest">1,420 / 15,000</span>
+        <!-- Dynamic Progress Bar -->
+        <div class="counter-box">
+            <div class="counter-labels">
+                <span>Current Applications</span>
+                <span class="counter-gold">1,420 / 15,000</span>
             </div>
-            <!-- Selve statusbaren i champagne-guld -->
-            <div class="w-full bg-white/10 h-2 rounded-full overflow-hidden">
-                <div class="bg-caliber-gold h-full rounded-full transition-all duration-1000 ease-out" style="width: 9.5%"></div>
+            <div class="bar-bg">
+                <div class="bar-fill"></div>
             </div>
-            <p class="text-[10px] text-caliber-gray/50 mt-2.5 italic text-center leading-normal">
+            <p class="counter-sub">
                 We will initiate our closed testing phase in Europe as soon as we reach 15,000 verified applicants.
             </p>
         </div>
 
-        <!-- To store luksus guldknapper -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-md">
-            <!-- Venstre knap: Ansøg -->
-            <button class="w-full sm:w-1/2 px-6 py-4 border-2 border-caliber-gold text-caliber-gold rounded-full font-semibold text-xs tracking-widest uppercase hover:bg-caliber-gold hover:text-[#0B0C10] transition-all duration-300 cursor-pointer">
-                [ Apply for Membership ]
-            </button>
-            <!-- Højre knap: Scroll til filosofi -->
-            <a href="#philosophy" class="w-full sm:w-1/2 px-6 py-4 border-2 border-white/20 text-white rounded-full font-semibold text-xs tracking-widest uppercase hover:border-caliber-gold hover:text-caliber-gold text-center transition-all duration-300 cursor-pointer">
-                [ Our Philosophy ]
-            </a>
+        <!-- Knapper -->
+        <div class="btn-container">
+            <button class="btn btn-primary">[ Apply for Membership ]</button>
+            <a href="#philosophy" class="btn btn-secondary">[ Our Philosophy ]</a>
         </div>
 
     </section>
 
     <!-- PURPOSE & MINDSET SEKTION -->
-    <section id="philosophy" class="min-h-screen flex flex-col justify-center items-center px-6 py-28 bg-black/40 border-t border-white/5 w-full">
-        <div class="max-w-2xl mx-auto text-left w-full">
+    <section id="philosophy">
+        <div class="inner-philosophy">
             
-            <!-- Overskrift -->
-            <h2 class="text-center text-caliber-gold text-xs tracking-[0.25em] uppercase mb-16 font-bold">
+            <div class="p-heading text-center">
                 THE CALIBER PURPOSE AND MINDSET
-            </h2>
+            </div>
 
-            <!-- Manifest Brødtekst (Dine præcise afsnit) -->
-            <div class="space-y-8 text-caliber-gray text-base md:text-lg leading-relaxed font-light">
+            <div class="manifest-content">
                 
-                <p class="text-white font-medium text-center mb-10 text-lg md:text-xl">
-                    Is it still possible to maintain traditional values in our current modern society?<br>
-                    <span class="text-caliber-gold font-light italic text-base md:text-lg block mt-2">We believe it is. But it requires a sanctuary.</span>
-                </p>
+                <div class="top-question text-center">
+                    Is it still possible to maintain traditional values in our current modern society?
+                    <span>We believe it is. But it requires a sanctuary.</span>
+                </div>
 
                 <p>
                     The cultural noise outside has broken the pathway to genuine family and legacy. Mainstream dating apps are intentionally engineered to keep you trapped in an endless loop of searching for profit, without ever helping you achieve your desired result. They populate their networks with fake or abandoned zombie profiles to manipulate their statistics.
                 </p>
 
-                <p class="border-l-2 border-caliber-gold pl-6 py-3 my-12 text-white font-normal italic bg-white/[0.01] text-base md:text-lg leading-relaxed">
+                <div class="quote-box">
                     Caliber is not an app. It is a digital market correction. We are the future – born out of frustration with the current lack of quality.
-                </p>
+                </div>
 
                 <p>
                     Our purpose is to bring like-minded, quality singles together in a borderless community engineered for creating long-lasting, complementary relationships. When we say like-minded, we are talking about those who recognize that political correctness, wokeness, and radical relationship ideologies have absolutely nothing to do in a healthy relationship.
@@ -113,28 +300,3 @@
                 </p>
 
                 <p>
-                    But this community is not an artificial club for an unblemished elite. We know and accept that everyone has their own unique preferences, kinks, qualities, and bad habits. Instead, we define a "high-value person" by an excellent set of moral values, principles, and personal accountability.
-                </p>
-
-                <p>
-                    This community is for those who face their own challenges instead of expecting others to fix them. Those who look inward and take accountability for themselves before pointing fingers at their partner. Those who want to grow and become better people — not only for themselves, but for the people around them that they love.
-                </p>
-
-                <p>
-                    Caliber doesn't judge you for what you want in a relationship. We simply aim to give you and your future partner the cleanest, safest, and most uncompromising stepping stone to find each other.
-                </p>
-
-            </div>
-
-            <!-- Bundknap for at rulle op igen -->
-            <div class="text-center mt-20">
-                <a href="#" class="text-xs text-caliber-gold/40 tracking-widest uppercase hover:text-caliber-gold transition-colors font-medium">
-                    ▲ Back to Top
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-</body>
-</html>
